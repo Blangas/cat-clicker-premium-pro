@@ -14,6 +14,7 @@ const cat4 = new cat('Snowzy', 'Sadly exited cat', 'img/pexels-photo-156934.jpeg
 const cat5 = new cat('Scare-cat', 'Scared cat face', 'img/pexels-photo-399647.jpeg');
 const cats = [cat1, cat2, cat3, cat4, cat5];
 
+// Function to load selected cat
 function loadCat(c) {
   const container = $('.cat-container');
 
@@ -26,6 +27,7 @@ function loadCat(c) {
     return `${disCounter}, ${disName}, ${disImg}`;
   });
 
+  // counting and displaying clicks
   container.find('img').on('click', function() {
     c.clickCount +=1;
     $('.click-count').text(c.clickCount);
@@ -42,6 +44,7 @@ $(function() {
     catId +=1;
   }
 
+  // Adds event listener and passes function argument by HTML data-id attribute
   list.on('click', 'a', function() {
     loadCat(cats[$(this).data('id')]);
   });
