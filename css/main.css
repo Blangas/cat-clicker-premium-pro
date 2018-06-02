@@ -6,3 +6,11 @@ body {
   font-size: 4em;
   margin: 0;
 }
+
+.cat-section {
+  display: inline-block;
+}
+
+.cat-name {
+  font-size: 2em;
+}
