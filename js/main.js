@@ -14,6 +14,36 @@ const cat4 = new cat('Snowzy', 'Sadly exited cat', 'img/pexels-photo-156934.jpeg
 const cat5 = new cat('Scare-cat', 'Scared cat face', 'img/pexels-photo-399647.jpeg');
 const cats = [cat1, cat2, cat3, cat4, cat5];
 
+function loadCat(c) {
+  const container = $('.cat-container');
+
+  container.html('');
+
+  container.append(function() {
+    const disCounter = `<p class="click-count">${c.clickCount}</p>`;
+    const disName = `<p class="cat-name">${c.catName}</p>`;
+    const disImg = `<img src="${c.img}" alt="${c.altText}">`
+    return `${disCounter}, ${disName}, ${disImg}`;
+  });
+}
+
+// Loop to create cats links
+$(function() {
+  const list = $('.cat-list');
+  let catId = 0;
+
+  for (let cat of cats) {
+    list.append(`<li><a href="#" data-id="${catId}">${cat.catName}</a></li>`);
+    catId +=1;
+  }
+
+  list.on('click', 'a', function() {
+    loadCat(cats[$(this).data('id')]);
+  });
+
+}());
+
+
 //*** OLD CODE ***//
 // const cats = $('.cat');
 //

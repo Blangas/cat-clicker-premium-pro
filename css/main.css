@@ -24,21 +24,27 @@ ul {
   padding-left: 1em;
 }
 
+li {
+  margin: 0.5em;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
 .cat-container {
   width: calc(100% - 150px);
   background-color: olivedrab;
 }
 
-/*** OLD CODE ***/
-/* .click-count {
+/*** Cat content ***/
+.click-count {
   font-size: 4em;
   margin: 0;
 }
 
-.cat-section {
-  display: inline-block;
-}
-
 .cat-name {
   font-size: 2em;
-} */
+}
