@@ -25,6 +25,11 @@ function loadCat(c) {
     const disImg = `<img src="${c.img}" alt="${c.altText}">`
     return `${disCounter}, ${disName}, ${disImg}`;
   });
+
+  container.find('img').on('click', function() {
+    c.clickCount +=1;
+    $('.click-count').text(c.clickCount);
+  });
 }
 
 // Loop to create cats links
