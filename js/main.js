@@ -16,18 +16,32 @@ $(function() {
       new cat('Mrs Grey', 'Grey cat standing on two legs', 'img/Grey Kitten On Floor.jpeg'),
       new cat('Snowzy', 'Sadly exited cat', 'img/pexels-photo-156934.jpeg'),
       new cat('Scare-cat', 'Scared cat face', 'img/pexels-photo-399647.jpeg')
-    ]
+    ],
+    activeCat: {}
   };
 
   const octopus = {
     init: function() {
       view.initList(model.cats);
     },
-    catSelect: function() {
+    catEvents: function() {
+      // Cat list events
       $('.cat-list').on('click', 'a', function() {
-        view.loadCat(model.cats[$(this).data('id')]);
+        const kitten = model.cats[$(this).data('id')];
+        view.loadCat(kitten);
+        model.activeCat = kitten;
       });
-      view.loadCat(model.cats[0]);
+      model.activeCat = model.cats[0];
+      view.loadCat(model.activeCat);
+      // admin buttons events
+      $('#admin').on('click', function(evn) {
+        evn.preventDefault();
+        view.showAdmin(model.activeCat);
+      });
+      $('#cancel').on('click', function() {
+        evn.preventDefault();
+        view.showAdmin();
+      });
     },
     catClick: function(cat) {
       $('.cat-container').find('img').on('click', function() {
@@ -45,7 +59,7 @@ $(function() {
         $('.cat-list').append(`<li><a href="#" data-id="${catId}">${cat.catName}</a></li>`);
         catId +=1;
       }
-      octopus.catSelect();
+      octopus.catEvents();
     },
     loadCat: function(cat) {
       const container = $('.cat-container');
@@ -60,6 +74,12 @@ $(function() {
       });
 
       octopus.catClick(cat);
+    },
+    showAdmin: function(cat) {
+      $('.modal').toggleClass('hidden');
+      $('#cat-name').val(cat.catName);
+      $('#cat-url').val(cat.img);
+      $('#cat-clicks').val(cat.clickCount);
     }
   };
 

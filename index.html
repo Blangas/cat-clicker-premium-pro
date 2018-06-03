@@ -17,12 +17,12 @@
 
   <nav>
     <ul class="cat-list"></ul>
-    <button>Admin</button>
+    <button id="admin">Admin</button>
   </nav>
 
   <section class="cat-container"></section>
 
-  <section class="modal">
+  <section class="modal hidden">
     <form class="form" action="">
       <label for="cat-name">Name:</label>
       <input id="cat-name" type="text" name="cat-name" value="">
@@ -30,6 +30,8 @@
       <input id="cat-url" type="text" name="cat-name" value="">
       <label for="cat-clicks">clicks:</label>
       <input id="cat-clicks" type="text" name="cat-name" value="">
+      <input id="cancel" type="submit" value="Cancel">
+      <input id="submit" type="submit" value="Submit">
     </form>
   </section>
 
