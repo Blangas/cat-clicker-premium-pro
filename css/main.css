@@ -48,3 +48,11 @@ a {
 .cat-name {
   font-size: 2em;
 }
+
+input {
+  margin-right: 2em;
+}
+
+.hidden {
+  display: none;
+}

@@ -27,6 +27,7 @@ $(function() {
       $('.cat-list').on('click', 'a', function() {
         view.loadCat(model.cats[$(this).data('id')]);
       });
+      view.loadCat(model.cats[0]);
     },
     catClick: function(cat) {
       $('.cat-container').find('img').on('click', function() {
