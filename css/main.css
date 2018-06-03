@@ -15,7 +15,7 @@ nav {
   width: 150px;
   height: calc(100% - 80px);
   flex: 0 auto;
-  background-color: darkolivegreen;
+  background-color: #ccc;
 }
 
 ul {
@@ -36,7 +36,7 @@ a {
 
 .cat-container {
   width: calc(100% - 150px);
-  background-color: olivedrab;
+  background-color: #eee;
 }
 
 /*** Cat content ***/
